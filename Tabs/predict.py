@@ -37,18 +37,30 @@ spread1,spread2,PPE - Three nonlinear measures of fundamental frequency variatio
     st.subheader("Select Values:")
 
     # Take input of features from the user.
-    avff = st.slider("Average vocal fundamental frequency", int(df["AVFF"].min()), int(df["AVFF"].max()))
-    mavff = st.slider("Maximum vocal fundamental frequency", int(df["MAVFF"].min()), int(df["MAVFF"].max()))
-    mivff = st.slider("Minimum vocal fundamental frequency", int(df["MIVFF"].min()), int(df["MIVFF"].max()))
-    jitddp = st.slider("Jitter:DDP", float(df["Jitter:DDP"].min()), float(df["Jitter:DDP"].max()))
-    mdvpjit = st.slider("Multidimensional Voice Program:Jitter(%)", float(df["MDVP:Jitter(%)"].min()), float(df["MDVP:Jitter(%)"].max()))
-    mdvprap = st.slider("MDVP:RAP", float(df["MDVP:RAP"].min()), float(df["MDVP:RAP"].max()))
-    mdvpapq = st.slider("MDVP:APQ", float(df["MDVP:APQ"].min()), float(df["MDVP:APQ"].max()))
-    mdvpppq = st.slider("MDVP:PPQ", float(df["MDVP:PPQ"].min()), float(df["MDVP:PPQ"].max()))
-    mdvpshim = st.slider("MDVP:Shimmer", float(df["MDVP:Shimmer"].min()), float(df["MDVP:Shimmer"].max()))
-    shimdda = st.slider("Shimmer:DDA", float(df["Shimmer:DDA"].min()), float(df["Shimmer:DDA"].max()))
-    shimapq3 = st.slider("Shimmer:APQ3", float(df["Shimmer:APQ3"].min()), float(df["Shimmer:APQ3"].max()))
-    shimapq5 = st.slider("Shimmer:APQ5", float(df["Shimmer:APQ5"].min()), float(df["Shimmer:APQ5"].max()))
+    avff = st.slider("Average vocal fundamental frequency",
+                     int(df["AVFF"].min()), int(df["AVFF"].max()))
+    mavff = st.slider("Maximum vocal fundamental frequency",
+                      int(df["MAVFF"].min()), int(df["MAVFF"].max()))
+    mivff = st.slider("Minimum vocal fundamental frequency",
+                      int(df["MIVFF"].min()), int(df["MIVFF"].max()))
+    jitddp = st.slider("Jitter:DDP", float(
+        df["Jitter:DDP"].min()), float(df["Jitter:DDP"].max()))
+    mdvpjit = st.slider("Multidimensional Voice Program:Jitter(%)", float(
+        df["MDVP:Jitter(%)"].min()), float(df["MDVP:Jitter(%)"].max()))
+    mdvprap = st.slider("MDVP:RAP", float(
+        df["MDVP:RAP"].min()), float(df["MDVP:RAP"].max()))
+    mdvpapq = st.slider("MDVP:APQ", float(
+        df["MDVP:APQ"].min()), float(df["MDVP:APQ"].max()))
+    mdvpppq = st.slider("MDVP:PPQ", float(
+        df["MDVP:PPQ"].min()), float(df["MDVP:PPQ"].max()))
+    mdvpshim = st.slider("MDVP:Shimmer", float(
+        df["MDVP:Shimmer"].min()), float(df["MDVP:Shimmer"].max()))
+    shimdda = st.slider("Shimmer:DDA", float(
+        df["Shimmer:DDA"].min()), float(df["Shimmer:DDA"].max()))
+    shimapq3 = st.slider("Shimmer:APQ3", float(
+        df["Shimmer:APQ3"].min()), float(df["Shimmer:APQ3"].max()))
+    shimapq5 = st.slider("Shimmer:APQ5", float(
+        df["Shimmer:APQ5"].min()), float(df["Shimmer:APQ5"].max()))
     nhr = st.slider("NHR", float(df["NHR"].min()), float(df["NHR"].max()))
     hnr = st.slider("HNR", float(df["HNR"].min()), float(df["HNR"].max()))
     rpde = st.slider("RPDE", float(df["RPDE"].min()), float(df["RPDE"].max()))
@@ -57,7 +69,8 @@ spread1,spread2,PPE - Three nonlinear measures of fundamental frequency variatio
     ppe = st.slider("PPE", float(df["PPE"].min()), float(df["PPE"].max()))
 
     # Create a list to store all the features
-    features = [avff, mavff, mivff, jitddp, mdvpjit, mdvprap,mdvpapq,mdvpppq,mdvpshim,shimdda,shimapq3,shimapq5,nhr,hnr,rpde,dfa,d2,ppe]
+    features = [avff, mavff, mivff, jitddp, mdvpjit, mdvprap, mdvpapq, mdvpppq,
+                mdvpshim, shimdda, shimapq3, shimapq5, nhr, hnr, rpde, dfa, d2, ppe]
 
     # Create a button to predict
     if st.button("Predict"):
@@ -67,9 +80,11 @@ spread1,spread2,PPE - Three nonlinear measures of fundamental frequency variatio
 
         # Print the output according to the prediction
         if (prediction == 1):
-            st.warning("The person either has Parkison's disease or prone to get Parkinson's disease")
+            st.warning(
+                "The person either has Parkison's disease or prone to get Parkinson's disease")
         else:
             st.info("The person is safe from Parkinson's disease")
 
-        # Print teh score of the model 
-        st.write("The model used is trusted by doctor and has an accuracy of ", (score*100),"%")
+        # Print teh score of the model
+        st.write(
+            "The model used is trusted by doctor and has an accuracy of ", (score*100), "%")

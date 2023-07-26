@@ -11,10 +11,10 @@ from Tabs import home, data, predict, visualise
 
 # Configure the app
 st.set_page_config(
-    page_title = 'Parkinson\'s Disease Prediction',
-    page_icon = 'raised_hand_with_fingers_splayed',
-    layout = 'wide',
-    initial_sidebar_state = 'auto'
+    page_title='Parkinson\'s Disease Prediction',
+    page_icon='raised_hand_with_fingers_splayed',
+    layout='wide',
+    initial_sidebar_state='auto'
 )
 
 # Dictionary for pages
@@ -23,12 +23,12 @@ Tabs = {
     "Data Info": data,
     "Prediction": predict,
     "Visualisation": visualise
-    
+
 }
 
 # Create a sidebar
 # Add title to sidear
-st.sidebar.title("Navigation")
+st.sidebar.title("Parkinsons Detection")
 
 # Create radio option to select the page
 page = st.sidebar.radio("Pages", list(Tabs.keys()))
